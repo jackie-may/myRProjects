@@ -8,7 +8,7 @@ runExample("01_hello")
 ui = fluidPage(
   
   #app title
-  titlePanel("Hello Shiny!"),
+  titlePanel("Hello World!"),
   
   #sidebar layout with input and output definitions
   sidebarLayout(
@@ -19,7 +19,7 @@ ui = fluidPage(
       #input: slider for the number of bins
       sliderInput(inputId = "bins",
                   label = "number of bins:",
-                  min = 1,
+                  min = 5,
                   max = 50,
                   value = 30)
 
@@ -58,8 +58,8 @@ server = function(input, output) {
     bins<- seq(min(x), max(x), length.out = input$bins + 1)
     
     
-    hist(x, breaks = bins, col = "#75AADB", border = "white",
-         xlab = "Waiting time to nest eruption (in mins)",
+    hist(x, breaks = bins, col = "#75AADB", border = "orange",
+         xlab = "Waiting time to next eruption (in mins)",
          main = "Histogram of waiting times")
 
     
