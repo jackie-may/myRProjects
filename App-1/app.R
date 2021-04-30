@@ -5,7 +5,7 @@ runExample("01_hello")
 
 #UI OBJECT FOR THE HELLO SHINY EXAMPLE
 #define ui for app that draws a histogram
-ui = fluidPage(
+ui <- fluidPage(
   
   #app title
   titlePanel("Hello World!"),
@@ -42,7 +42,7 @@ ui = fluidPage(
 #SERVER
 #here is the server function for the hello shiny example
 #define server logic required to draw a histogram
-server = function(input, output) {
+server <- function(input, output) {
   
   #histogram of the old faithful geyser data
   #with requested number of bins
@@ -54,8 +54,8 @@ server = function(input, output) {
   output$distPlot = renderPlot({
     
     
-    x   <- faithful$waiting
-    bins<- seq(min(x), max(x), length.out = input$bins + 1)
+    x     <- faithful$waiting
+    bins  <- seq(min(x), max(x), length.out = input$bins + 1)
     
     
     hist(x, breaks = bins, col = "#75AADB", border = "orange",
